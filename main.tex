@@ -10,7 +10,33 @@
 \usepackage{wrapfig}
 \usepackage{lipsum}
 \usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{listings}
+
+\lstdefinestyle{uno}{
+    language=C,
+    captionpos=b,
+    numbers=left,
+    frame=l,
+    tabsize=2,
+    texcl=true
+}
+\lstdefinestyle{python}{
+    %basicstyle=\footnotesize{14}{14}\selectfont\ttfamily,
+    language=Python,
+    captionpos=b,
+    numbers=left,
+    frame=l,
+    showtabs=true,
+    tabsize=2,
+    texcl=true
+}
+
+
 \begin{document} % начало документа
+\renewcommand{\lstlistingname}{Пример кода}
+%\renewcommand{\lstlistlistingname}{Примеры кода}
+
 \include{src/title}
 % реферат
 \include{src/referat}
@@ -21,15 +47,24 @@
 \def\contentsname{СОДЕРЖАНИЕ}
 \large \tableofcontents
 \end{center}
+
+\newpage
+
+\begin{center}
+    \def\lstlistlistingname{ПРИМЕРЫ КОДА}
+    \large \lstlistoflistings
+\end{center}
 % определения (не обяз)
 % введение
 \include{src/intro}
 % основная часть
 \include{src/kinematic}
 \include{src/modeling}
+\include{src/arduino}
+\include{src/econom}
 % заключение
 \include{src/conclusion}
-% список источников
+ список источников
 \include{src/spisok}
 % приложения (не обязательно)
 \end{document}
